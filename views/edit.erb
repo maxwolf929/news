@@ -1,0 +1,20 @@
+﻿<html>
+	<head>
+		<title>إرابيا.تيكنولوجي</title>
+	</head>
+
+<body dir="rtl">
+	<h1>الأخبار التقنية</h1>
+	<a href="/admin">الرئيسية</a>||
+	<a href="/tech_admin">تعديل الأخبار التقنية</a>||
+	<a href="/ops_admin">تعديل برمجيات مفتوحة المصدر</a>||
+	<a href="/programming_admin">تعديل عالم البرمجة</a>
+	<form action="/update/<%= @news[:news_id] %>" method="post">
+			عنوان الخبر:<input name="title" type="text" value="<%= @news[:title] %>"><br>
+			وصف الخبر:<textarea name="description" type="text"><%= @news[:description] %></textarea><br>
+			تم التعديل في :<input name="ndate" type="date"><br>
+		<input type="submit" value="موافق">
+		</form>
+</body>
+
+</html>

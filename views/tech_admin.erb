@@ -1,0 +1,24 @@
+﻿<html>
+	<head>
+		<title>إرابيا.تيكنولوجي</title>
+	</head>
+
+<body dir="rtl">
+	<h1>الأخبار التقنية</h1>
+	<a href="/admin">الرئيسية</a>||
+	<a href="/tech_admin">أخبار تقنية</a>||
+	<a href="/ops_admin">برمجيات مفتوحة المصدر</a>||
+	<a href="/programming_admin">عالم البرمجة</a>
+	
+	<% @news.each do |n| %>
+		<% n[:cat_id] %>
+		<h4><%= n[:title] %></h4>
+		<p><%= n[:description] %></p>
+		<p><%= n[:ndate] %>
+		<a href="/delete/<%= n[:news_id] %>">حذف الخبر</a>
+		<a href="/edit/<%= n[:news_id] %>">تعديل الخبر</a>
+		<hr/>
+	<% end %>
+</body>
+
+</html>

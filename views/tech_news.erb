@@ -1,0 +1,22 @@
+﻿<html>
+	<head>
+		<title>إرابيا.تيكنولوجي</title>
+	</head>
+
+<body dir="rtl">
+	<h1>الأخبار التقنية</h1>
+	<a href="/">الرئيسية</a>||
+	<a href="/tech_news">أخبار تقنية</a>||
+	<a href="/ops_news">برمجيات مفتوحة المصدر</a>||
+	<a href="/programming_news">عالم البرمجة</a>
+	
+	<% @news.each do |n| %>
+		<% n[:cat_id] %>
+		<h4><%= n[:title] %></h4>
+		<p><%= n[:description] %></p>
+		<p><%= n[:ndate] %>
+		<hr/>
+	<% end %>
+</body>
+
+</html>

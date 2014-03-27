@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>إضافة أخبار جديدة</title>
+		<style>
+		*{
+			direction: rtl;
+		}
+		input, textarea{
+				display: block;
+				font-size: 18px;
+				/* margin-bottom: 2px; */
+			}
+		</style>
+	</head>
+	<body>
+		<h2>إضافة أخبار جديدة</h2>
+		<form action="/create" method="post">
+			تصنيف الخبر:
+			<select name="categs">
+			<% @categories.each do |c| %>
+				<option value="<%= c[:cat_id] %>"><%= c[:cats] %></option>
+			<% end %>	
+			</select>
+			<br/>
+			
+			عنوان الخبر:<input name="title" type="text"><br>
+			وصف الخبر:<textarea name="description" type="text"></textarea><br>
+			إضافة تاريخ الخبر:<input name="ndate" type="date"><br>
+			<input type="submit" value="موافق">
+		</form>
+	</body>
+</html>
